@@ -1,0 +1,19 @@
+.nav__list{
+  display: flex;
+  padding: 2rem 3rem;
+  align-items: center;
+}
+
+.list--primary{
+  background-color: rgb(50, 63, 105);
+}
+
+.list__item{
+  color: #ccc;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+.list__item-main{
+  font-size: 2rem;
+}
