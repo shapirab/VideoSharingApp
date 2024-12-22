@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+  --background-color: rgb(8, 30, 73);
+  --component-background: rgb(50, 63, 105);
+}
+
 ul{
   list-style-type: none;
 }

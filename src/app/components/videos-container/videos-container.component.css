@@ -1,0 +1,35 @@
+.videos--container{
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.videos__search{
+  width: 90%;
+  padding: 1rem 3rem;
+  background-color: var(--component-background);
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.fas{
+  color: #fff;
+  align-self: flex-end;
+}
+
+.search__input{
+  border: none;
+  background-color: transparent;
+  flex: 1;
+}
+
+.search__input:focus{
+  outline: none;
+  color: #fff;
+}

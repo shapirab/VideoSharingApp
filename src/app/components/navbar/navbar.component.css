@@ -5,7 +5,8 @@
 }
 
 .list--primary{
-  background-color: rgb(50, 63, 105);
+  background-color: var(--component-background);
+  margin: 0;
 }
 
 .list__item{
