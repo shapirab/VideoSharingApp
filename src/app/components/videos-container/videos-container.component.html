@@ -3,5 +3,9 @@
     <input type="text" placeholder="Search a video..." class="search__input">
     <i class="fas fa-search"></i>
   </div>
-  <div class="videos__body"></div>
+  <div class="videos__body">
+    <div *ngFor="let video of videos">
+      <app-video-thumbnail [video]="video"></app-video-thumbnail>
+    </div>
+  </div>
 </div>

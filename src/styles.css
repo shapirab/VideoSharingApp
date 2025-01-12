@@ -4,6 +4,11 @@
   --component-background: rgb(50, 63, 105);
 }
 
+body, html{
+  width: 100vw;
+  /* overflow: hidden; */
+}
+
 ul{
   list-style-type: none;
 }

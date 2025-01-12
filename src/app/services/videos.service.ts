@@ -17,26 +17,44 @@ export class VideosService {
     this.videos = [
       { Id: 1,
         Cover: await this.convertDummyImage(),
-        clipURL: '../assets/images/film.png',
+        clipURL: '../assets/images/img-1.png',
         Title: 'video 1',
         Rating: 4
       },
       { Id: 2,
         Cover: await this.convertDummyImage(),
-        clipURL: '../assets/images/film.png',
+        clipURL: '../assets/images/img-1.png',
         Title: 'video 2',
         Rating: 4
       },
       { Id: 3,
         Cover: await this.convertDummyImage(),
-        clipURL: '../assets/images/film.png',
+        clipURL: '../assets/images/img-1.png',
         Title: 'video 3',
         Rating: 4
       },
       { Id: 4,
         Cover: await this.convertDummyImage(),
-        clipURL: '../assets/images/film.png',
+        clipURL: '../assets/images/img-1.png',
         Title: 'video 4',
+        Rating: 4
+      },
+      { Id: 4,
+        Cover: await this.convertDummyImage(),
+        clipURL: '../assets/images/img-1.png',
+        Title: 'video 402',
+        Rating: 4
+      },
+      { Id: 4,
+        Cover: await this.convertDummyImage(),
+        clipURL: '../assets/images/img-1.png',
+        Title: 'video 5',
+        Rating: 4
+      },
+      { Id: 4,
+        Cover: await this.convertDummyImage(),
+        clipURL: '../assets/images/img-1.png',
+        Title: 'video 6',
         Rating: 4
       },
    ];

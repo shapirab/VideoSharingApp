@@ -1,0 +1,13 @@
+.video--thumbnail__card{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+.video--thumbnail__card img{
+  object-fit: cover;
+}
