@@ -17,7 +17,7 @@ export class VideosService {
     this.videos = [
       { Id: 1,
         Cover: await this.convertDummyImage(),
-        clipURL: '../assets/images/img-1.png',
+        clipURL: 'https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_1MB.mp4',
         Title: 'video 1',
         Rating: 4
       },

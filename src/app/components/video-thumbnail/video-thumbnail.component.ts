@@ -7,10 +7,19 @@ import { Video } from 'src/models/entities/video';
   styleUrls: ['./video-thumbnail.component.css']
 })
 export class VideoThumbnailComponent implements OnInit {
-  @Input() video: Video | undefined
+  @Input() video?: Video
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  stopVideo(videoPlayer: HTMLVideoElement){
+    videoPlayer.pause();
+    videoPlayer.currentTime = 0;
+  }
+
+  playVideo(videoPlayer: HTMLVideoElement){
+    videoPlayer.play();
   }
 
 }
