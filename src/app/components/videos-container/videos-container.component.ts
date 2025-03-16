@@ -12,7 +12,9 @@ export class VideosContainerComponent implements OnInit {
   constructor(private videoService: VideosService) { }
 
   async ngOnInit(): Promise<void> {
-    this.videos = await this.videoService.getAllVideos();
-    console.log(this.videos)
+    this.videoService.getAllVideos().subscribe({
+      next: videos => this.videos = videos,
+      error: err => console.log(err)
+    });
   }
 }

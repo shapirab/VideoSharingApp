@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { VideosContainerComponent } from './components/videos-container/videos-container.component';
 import { VideoThumbnailComponent } from './components/video-thumbnail/video-thumbnail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { VideoUploadComponent } from './components/video-upload/video-upload.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,11 +16,14 @@ import { VideoThumbnailComponent } from './components/video-thumbnail/video-thum
     AppComponent,
     NavbarComponent,
     VideosContainerComponent,
-    VideoThumbnailComponent
+    VideoThumbnailComponent,
+    VideoUploadComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 export interface Video{
   Id: number,
-  Cover: ImageBitmap,
-  clipURL: string;
+  CoverImg: ImageBitmap,
+  ClipURL: string;
   Title: string,
   Rating: number
 }
