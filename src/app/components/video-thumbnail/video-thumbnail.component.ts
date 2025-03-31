@@ -11,9 +11,10 @@ import { Video } from 'src/models/entities/video';
 export class VideoThumbnailComponent implements OnInit {
   @Input() video?: Video
   videoSource: any = '';
+  isVideoPlaying: boolean = false;
   @ViewChild('videoPlayer') videoPlayer!: ElementRef;
 
-  constructor(private videoService: VideosService, private cdRef: ChangeDetectorRef, private sanitizer: DomSanitizer) { }
+  constructor(private videoService: VideosService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     if (this.video) {
@@ -34,18 +35,24 @@ export class VideoThumbnailComponent implements OnInit {
       }
       let byteArray = new Uint8Array(byteNumbers);
       let blob = new Blob([byteArray], { type: 'video/mp4' });
-      console.log('Blob created: ', blob);
       const blobUrl = URL.createObjectURL(blob);
       this.videoSource = this.sanitizer.bypassSecurityTrustUrl(blobUrl);
     });
   }
 
+  pauseVideo(videoPlayer: HTMLVideoElement) {
+    videoPlayer.pause();
+    this.isVideoPlaying = false;
+  }
+
   stopVideo(videoPlayer: HTMLVideoElement){
     videoPlayer.pause();
     videoPlayer.currentTime = 0;
+    this.isVideoPlaying = false;
   }
 
   playVideo(videoPlayer: HTMLVideoElement){
+    this.isVideoPlaying = true;
     videoPlayer.play();
   }
 

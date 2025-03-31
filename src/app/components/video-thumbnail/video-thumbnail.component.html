@@ -2,14 +2,16 @@
   <video #videoPlayer [src]="videoSource" >
     Your browser does not support the video tag.
 </video>
-  <p>{{ videoSource }}</p>
   <div class="card-body">
     <h5 class="card-title">{{video?.title}}</h5>
     <p class="card-text">{{video?.rating}}</p>
 
     <ul class="list-inline text-center">
-      <li class="list-inline-item">
+      <li *ngIf="!isVideoPlaying" class="list-inline-item">
         <button class="btn btn-primary" (click)="playVideo(videoPlayer)"><i class="fas fa-play"></i></button>
+      </li>
+      <li *ngIf="isVideoPlaying" class="list-inline-item">
+        <button class="btn btn-primary" (click)="pauseVideo(videoPlayer)"><i class="fas fa-pause"></i></button>
       </li>
       <li class="list-inline-item">
         <button class="btn btn-primary" (click)="stopVideo(videoPlayer)"><i class="fas fa-stop"></i></button>
