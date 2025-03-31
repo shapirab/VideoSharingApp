@@ -27,14 +27,16 @@ export class VideoUploadComponent implements OnInit {
 
   onVideoSubmit(){
     if (this.selectedFile && this.coverImg && this.title) {
-      const videoDto: VideoDto = {
-        VideoFile: this.selectedFile,
-        CoverImg: this.coverImg,
-        Title: this.title,
-      };
-      this.videoService.uploadVideo(videoDto).subscribe({
-        next: () => this.router.navigateByUrl('clips'),
-        error: err => console.log(err)
+      let formData = new FormData();
+      formData.append('VideoFile', this.selectedFile, this.selectedFile.name);
+      formData.append('CoverImg', this.coverImg);
+      formData.append('Title', this.title);
+      if (this.rating !== undefined) {
+        formData.append('Rating', this.rating.toString());
+      }
+        this.videoService.uploadVideo(formData).subscribe({
+          next: () => this.router.navigateByUrl('clips'),
+          error: err => console.log(err)
       });
     }
   }

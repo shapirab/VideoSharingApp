@@ -1,11 +1,11 @@
 <div class="card mb-2">
-  <video #videoPlayer>
-    <source [src]="video?.ClipURL" type="video/mp4">
-      Your browser does not support the video tag.
-  </video>
+  <video #videoPlayer [src]="videoSource" >
+    Your browser does not support the video tag.
+</video>
+  <p>{{ videoSource }}</p>
   <div class="card-body">
-    <h5 class="card-title">{{video?.Title}}</h5>
-    <p class="card-text">{{video?.Rating}}</p>
+    <h5 class="card-title">{{video?.title}}</h5>
+    <p class="card-text">{{video?.rating}}</p>
 
     <ul class="list-inline text-center">
       <li class="list-inline-item">

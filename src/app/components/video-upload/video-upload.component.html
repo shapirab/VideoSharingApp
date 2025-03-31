@@ -1,7 +1,7 @@
 <h2>Upload Video</h2>
-    <form #uploadVideoFord="ngForm" (ngSubmit)="onVideoSubmit()">
-      <input type="text" [(ngModel)]="coverImg" placeholder="Cover Image URL" name="coverImg" required />
-      <input type="text" [(ngModel)]="title" placeholder="Title" name="title" required />
-      <input type="file" (change)="onFileSelected($event)" name="file" accept="video/mp4" required />
-      <button type="submit">Upload</button>
-    </form>
+<form #uploadVideoFord="ngForm" (ngSubmit)="onVideoSubmit()">
+  <input type="text" [(ngModel)]="coverImg" placeholder="Cover Image URL" name="coverImg" required />
+  <input type="text" [(ngModel)]="title" placeholder="Title" name="title" required />
+  <input type="file" (change)="onFileSelected($event)" name="file" accept="video/mp4" required />
+  <button type="submit">Upload</button>
+</form>
