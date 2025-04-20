@@ -9,6 +9,7 @@ import { VideoThumbnailComponent } from './components/video-thumbnail/video-thum
 import { HttpClientModule } from '@angular/common/http';
 import { VideoUploadComponent } from './components/video-upload/video-upload.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

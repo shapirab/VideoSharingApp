@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { VideosService } from 'src/app/services/videos.service';
-import { VideoDto } from 'src/models/Dtos/videoDto';
 
 @Component({
   selector: 'app-video-upload',
@@ -26,10 +25,14 @@ export class VideoUploadComponent implements OnInit {
   }
 
   onVideoSubmit(){
-    if (this.selectedFile && this.coverImg && this.title) {
+    console.log('videoUploadComponent::onVideoSubmit() called')
+    if (this.selectedFile && this.title) {
+      console.log('if statement true')
       let formData = new FormData();
       formData.append('VideoFile', this.selectedFile, this.selectedFile.name);
-      formData.append('CoverImg', this.coverImg);
+      if(this.coverImg){
+        formData.append('CoverImg', this.coverImg);
+      }
       formData.append('Title', this.title);
       if (this.rating !== undefined) {
         formData.append('Rating', this.rating.toString());

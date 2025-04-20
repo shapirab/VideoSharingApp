@@ -23,7 +23,6 @@ export class VideoThumbnailComponent implements OnInit {
   }
 
   loadVideo(): void {
-    console.log('videoThumbnailComponent::loadVideo(). video = ', this.video)
     if(!this.video){
       return;
     }

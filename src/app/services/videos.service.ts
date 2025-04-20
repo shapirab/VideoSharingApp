@@ -24,6 +24,7 @@ export class VideosService {
   }
 
   uploadVideo(videoDto: any): Observable<Video> {
+    console.log('videoService::uploadVideo(). videoDto: ', videoDto)
     return this.http.post<Video>(`${this.baseUrl}/videos/upload-video`, videoDto);
   }
 }
