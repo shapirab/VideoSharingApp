@@ -25,17 +25,15 @@ export class VideoUploadComponent implements OnInit {
   }
 
   onVideoSubmit(){
-    console.log('videoUploadComponent::onVideoSubmit() called')
     if (this.selectedFile && this.title) {
-      console.log('if statement true')
       let formData = new FormData();
       formData.append('VideoFile', this.selectedFile, this.selectedFile.name);
-      if(this.coverImg){
-        formData.append('CoverImg', this.coverImg);
-      }
       formData.append('Title', this.title);
       if (this.rating !== undefined) {
         formData.append('Rating', this.rating.toString());
+      }
+      if(this.coverImg){
+        formData.append('CoverImg', this.coverImg);
       }
         this.videoService.uploadVideo(formData).subscribe({
           next: () => this.router.navigateByUrl('clips'),

@@ -1,6 +1,15 @@
+.nav__container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  padding: 2rem 3rem;
+  background-color: var(--component-background);
+}
+
 .nav__list{
   display: flex;
-  padding: 2rem 3rem;
+
   align-items: center;
 }
 

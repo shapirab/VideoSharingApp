@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { VideosContainerComponent } from './components/videos-container/videos-container.component';
-import { VideoThumbnailComponent } from './components/video-thumbnail/video-thumbnail.component';
+import { VideosContainerComponent } from './components/videos/videos-container/videos-container.component';
+import { VideoThumbnailComponent } from './components/videos/video-thumbnail/video-thumbnail.component';
 import { HttpClientModule } from '@angular/common/http';
-import { VideoUploadComponent } from './components/video-upload/video-upload.component';
+import { VideoUploadComponent } from './components/videos/video-upload/video-upload.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './components/account/login/login.component';
+import { RegisterComponent } from './components/account/register/register.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavbarComponent,
     VideosContainerComponent,
     VideoThumbnailComponent,
-    VideoUploadComponent
+    VideoUploadComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
