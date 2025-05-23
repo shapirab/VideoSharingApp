@@ -1,6 +1,6 @@
 <div class="videos--container">
   <div class="videos__search">
-    <input type="text" placeholder="Search a video..." class="search__input">
+    <input type="text" placeholder="Search a video..." class="search__input" (input)="onFilterSelect($event)">
     <i class="fas fa-search"></i>
   </div>
   <div class="videos__body">

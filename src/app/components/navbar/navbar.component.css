@@ -9,7 +9,6 @@
 
 .nav__list{
   display: flex;
-
   align-items: center;
 }
 
@@ -26,4 +25,8 @@
 
 .list__item-main{
   font-size: 2rem;
+}
+
+.dropdown{
+  cursor: pointer;
 }

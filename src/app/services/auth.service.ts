@@ -22,6 +22,7 @@ export class AuthService {
     this.http.post<UserDto>(`${this.baseUrl}/accounts/authenticate`, loginUser).subscribe({
       next: (user: UserDto) => {
         console.log('authService::login(). User: ', user)
+        localStorage.setItem('token', user.token);
         this.currentUserSource.next(user);
       },
       error: err => console.log(err)

@@ -1,9 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { VideoDto } from 'src/models/Dtos/videoDto';
 import { Video } from 'src/models/entities/video';
+import VideoParams from 'src/models/params/videoParams';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,21 @@ export class VideosService {
 
   constructor(private http: HttpClient) {}
 
-  getAllVideos(): Observable<Video[]> {
-    return this.http.get<Video[]>(`${this.baseUrl}/videos`);
+  getAllVideos(videoParams: VideoParams): Observable<Video[]> {
+    let params = new HttpParams();
+
+    if(videoParams.searchQuery){
+      params = params.append('searchQuery', videoParams.searchQuery);
+    }
+
+    params = params.append('pageNumber', videoParams.pageNumber);
+    params = params.append('pageSize', videoParams.pageSize);
+
+    return this.http.get<Video[]>(`${this.baseUrl}/videos`, { params, observe: 'response' })
+      .pipe(
+        // Extract the body (Video[]) from the HttpResponse
+        map(response => response.body as Video[])
+      );
   }
 
   getVideoByBytes(id: number): Observable<string>{
@@ -25,6 +39,8 @@ export class VideosService {
 
   uploadVideo(videoDto: any): Observable<Video> {
     console.log('videoService::uploadVideo(). videoDto: ', videoDto)
-    return this.http.post<Video>(`${this.baseUrl}/videos/upload-video`, videoDto);
+    let token = localStorage.getItem('token');
+    let headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.post<Video>(`${this.baseUrl}/videos/upload-video`, videoDto, {headers});
   }
 }
