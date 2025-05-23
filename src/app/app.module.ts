@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/account/login/login.component';
 import { RegisterComponent } from './components/account/register/register.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { NotAuthorizedComponent } from './components/shared/not-authorized/not-authorized.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     VideoUploadComponent,
     LoginComponent,
     RegisterComponent,
+    NotAuthorizedComponent,
   ],
   imports: [
     BrowserModule,
